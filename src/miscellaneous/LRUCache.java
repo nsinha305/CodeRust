@@ -26,8 +26,10 @@ public class LRUCache {
 			n.next = null;
 		} else {
 			n.prev.next = null;
+			rear = n.prev;
 			n.prev = null;
 		}
+		load--;
 		return n;
 	}
 
@@ -87,6 +89,7 @@ public class LRUCache {
 			cache.addToCache(p);
 			cache.print();
 			p = sc.nextInt();
+			System.out.println("Capacity : " + cache.capacity + " Load : " + cache.load);
 		}
 		sc.close();
 	}
