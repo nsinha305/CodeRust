@@ -39,6 +39,7 @@ public class NaryToBinaryTree {
 		three.children.add(six);
 
 		TreeNode bstNode = convertToBinary(one);
+		BTreePrinter.printNode(bstNode);
 	}
 
 }
