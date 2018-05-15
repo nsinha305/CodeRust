@@ -8,7 +8,11 @@ public class StringSegmentation {
 
 	static boolean stringSegmentation(String word, Set<String> dictionary) {
 		Set<String> solved = new HashSet<String>();
-		return stringSegmentation(word, dictionary, solved);
+		boolean returnVal = stringSegmentation(word, dictionary, solved);
+		for(String s : solved) {
+			System.out.println(s);
+		}
+		return returnVal;
 	}
 
 	static boolean stringSegmentation(String word, Set<String> dictionary, Set<String> solved) {
@@ -25,6 +29,7 @@ public class StringSegmentation {
 					solved.add(second);
 				}
 			}
+			solved.add(first);
 		}
 		return false;
 	}
